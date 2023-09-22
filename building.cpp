@@ -13,7 +13,10 @@ public:
 
   void print(std::ostream& out ) const {
 	out << " Building " << id_ << " at " << this  << std::endl;
-        out << " Floors " << *storeys_ << std::endl;	
+        out << " Floors \n";
+	for (int floor = 0; floor < nb_storeys_; ++floor) {
+		out << storeys_[floor] << std::endl;
+	}	
   }
 
 private: 
