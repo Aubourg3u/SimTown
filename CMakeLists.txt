@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.10)
 
 # set the project name
-project(HelloProj VERSION 1.0)
+project(SimTown VERSION 1.0)
 
 # specify the C++ standard
 # use the CMAKE_CXX_STANDARD variable
@@ -17,6 +17,6 @@ add_subdirectory(src/class)
 #add executable
 option(HELLOWORD_WITH_EXECUTABLES "Compile mains" ON)
 if(HELLOWORD_WITH_EXECUTABLES)
- message(STATUS "Configuring Hello World with executables")
+ message(STATUS "Configuring Sim Town with executables")
  add_subdirectory(mains)
 endif()

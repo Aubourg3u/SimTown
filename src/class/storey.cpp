@@ -1,4 +1,4 @@
-#include "storey.h"
+#include <class/storey.h>
 
 int Storey::serial_number_ = 1;
 
