@@ -14,7 +14,7 @@ jobs:
   format:
     uses: Geode-solutions/actions/.github/workflows/format.yml@master
     secrets:
-      TOKEN: ${{ secrets.TOKEN }}
+      TOKEN: ${{ secrets.TOKEN_CI }}
 
   build:
     # The CMake configure and build commands are platform agnostic and should work equally well on Windows or Mac.
@@ -41,11 +41,11 @@ jobs:
     steps:
     - uses: actions/checkout@v3
       with:
-        token: ${{ secrets.TOKEN }}
+        token: ${{ secrets.TOKEN_CI }}
     - name: Semantic Release
       uses: cycjimmy/semantic-release-action@v3
       with : 
         branch : main
       id: semantic
       env:
-        GITHUB_TOKEN: ${{ secrets.TOKEN }}
+        GITHUB_TOKEN: ${{ secrets.TOKEN_CI }}
