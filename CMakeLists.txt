@@ -20,3 +20,11 @@ if(HELLOWORD_WITH_EXECUTABLES)
  message(STATUS "Configuring Sim Town with executables")
  add_subdirectory(mains)
 endif()
+
+#add tests
+option(SIMTOWN_WITH_TESTS "Compile tests" ON)
+if(SIMTOWN_WITH_TESTS)
+ enable_testing()
+ message(STATUS "Configuring SimTown with tests")
+ add_subdirectory(tests)
+endif()
