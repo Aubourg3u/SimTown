@@ -30,6 +30,11 @@ public:
     // implemented by derived classes).
     virtual void print( std::ostream& out ) const;
 
+        // Méthode pour afficher le bâtiment sous forme de dessin.
+    virtual void display( std::ostream& out ) const;
+
+    int getNbStoreys() const;
+
 private:
     int id_;
     Storey* storeys_;
@@ -49,6 +54,8 @@ public:
 
     // Get the type of the 'House' class.
     virtual std::string getType() const override;
+
+    virtual void display( std::ostream& out ) const override;
 };
 
 //==================================================================================================================================================================================================================================================
@@ -64,6 +71,8 @@ public:
 
     // Get the type of the 'Tower' class.
     virtual std::string getType() const override;
+
+    virtual void display( std::ostream& out ) const override;
 };
 
 //==================================================================================================================================================================================================================================================
@@ -80,4 +89,5 @@ public:
     // Get the type of the 'TownHall' class.
     virtual std::string getType() const override;
 
+    virtual void display( std::ostream& out ) const override;
 };

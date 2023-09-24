@@ -101,6 +101,31 @@ void Building::print( std::ostream& out ) const
     }
 }
 
+int Building::getNbStoreys() const
+{
+    return nb_storeys_;
+}
+
+
+void Building::display( std::ostream& out ) const
+{
+    out << "        ________________" << std::endl;
+    out << "       /               /|" << std::endl;
+    out << "      /               / |" << std::endl;
+    out << "     /______________ /  |" << std::endl;
+    out << "    |                |  |" << std::endl;
+
+    for( int i = 0; i < nb_storeys_; ++i )
+    {   
+        out << "    |   _    _       |  |" << std::endl;
+        out << "    |  |_|  |_|      |  |" << std::endl;
+    }
+
+    out << "    |                |  /" << std::endl;
+    out << "    |   _            | /" << std::endl;
+    out << "    |__|_|___________|/" << std::endl;
+}
+
 //==================================================================================================================================================================================================================================================
 
 // Constructor for the 'House' class, inheriting from 'Building'.
@@ -122,6 +147,34 @@ std::string House::getType() const
     return "House";
 }
 
+void House::display( std::ostream& out ) const
+{
+    out << "         ______________"<< std::endl;
+    out << "        /             /\\ " << std::endl;
+    out << "       /             /  \\" << std::endl;
+    out << "      /_____________/    \\" << std::endl;
+    out << "     /              \\     \\" << std::endl;
+    out << "    /                \\    /" << std::endl;
+    out << "   /                  \\  /" << std::endl;
+    out << "  /____________________\\/" << std::endl;
+
+        for( int i = 0; i < getNbStoreys() - 1; ++i )
+    {
+        out << "    |   _    _       |  |" << std::endl;
+        out << "    |  |_|  |_|      |  |" << std::endl;
+    }
+
+    out << "    |          _     |  /" << std::endl;
+    out << "    |   _     |_|    | /" << std::endl;
+    out << "    |__|_|___________|/" << std::endl;
+
+    for( int i = 0; i < getNbStoreys(); ++i )
+    {
+
+    }
+
+
+}
 //==================================================================================================================================================================================================================================================
 
 // Constructor for the 'Tower' class, inheriting from 'Building'.
@@ -143,6 +196,25 @@ std::string Tower::getType() const
     return "Tower";
 }
 
+void Tower::display( std::ostream& out ) const
+{
+    out << "        ________________" << std::endl;
+    out << "       /               /|" << std::endl;
+    out << "      /               / |" << std::endl;
+    out << "     /______________ /  |" << std::endl;
+    out << "    |                |  |" << std::endl;
+
+    for( int i = 0; i < getNbStoreys()-1; ++i )
+    {
+        out << "    |   _    _       |  |" << std::endl;
+        out << "    |  |_|  |_|      |  |" << std::endl;
+    }
+
+    out << "    |                |  /" << std::endl;
+    out << "    |   _            | /" << std::endl;
+    out << "    |__|_|___________|/" << std::endl;
+}
+
 //==================================================================================================================================================================================================================================================
 
 // Constructor for the 'TownHall' class, inheriting from 'Building'.
@@ -162,4 +234,10 @@ TownHall::~TownHall() {}
 std::string TownHall::getType() const
 {
     return "City Hall";
+}
+
+void TownHall::display( std::ostream& out ) const
+{
+    out << "Display for TownHall" << std::endl;
+    // Building::display(out);
 }
