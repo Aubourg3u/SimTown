@@ -1,0 +1,4 @@
+# ninja log v5
+1	1330	7172619339331852	src/class/CMakeFiles/class.dir/building.cpp.obj	366948fd8346389d
+9	1353	7172619339602096	src/class/CMakeFiles/class.dir/storey.cpp.obj	2a4842eefdbf6c86
+4	193	7172619581779077	src/class/libclass.a	949da29b13a33d73

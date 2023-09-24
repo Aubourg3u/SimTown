@@ -79,4 +79,5 @@ public:
 
     // Get the type of the 'TownHall' class.
     virtual std::string getType() const override;
+
 };

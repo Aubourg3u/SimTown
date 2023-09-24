@@ -1,61 +1,60 @@
 #include <class/building.h>
 #include <class/storey.h>
+#include <class/MyVector.h>
+#include <class/globals.h>
 
 #include <cstdlib>
 
 int main( int argc, char** argv )
 {
+    g_mode = "mute";
+
+    int tab[4] = { 0, 1, 2, 3 };
+
+    MyVector< int > vect( tab, 4 );
+    std::cout << vect << std::endl;
+
     int size = 0;
     std::cout << "Welcome to SimTown, please enter the street size."
               << std::endl;
     std::cin >> size;
 
-    // Create an array of 'Building' pointers called 'street' of size 'size'.
-    Building** street = new Building*[size];
+    // Utilisation de MyVector au lieu de tableau de pointeurs Building*
+    MyVector< Building* > street;
 
-    // Initialize each element of 'street' with a 'Tower' object, passing 'id_b'
-    // and '4' as parameters.
+    // Initialisation de chaque élément de 'street' avec un objet 'Tower',
+    // en passant 'id_b' et '4' comme paramètres.
     for( int id_b = 0; id_b < size; id_b++ )
     {
-        street[id_b] = new Tower( id_b, 4 );
+        street.push_back( new Tower( id_b, 4 ) );
     }
 
-    // Create a 'TownHall' object named 'townHall' with an ID of '666'.
+    // Création d'un objet 'TownHall' nommé 'townHall' avec un ID de '666'.
     TownHall* townHall = new TownHall( 666 );
 
-    // Create a new array of 'Building' pointers called 'street_TH' with a size
-    // one greater than 'size'.
-    Building** street_TH = new Building*[size + 1];
+    // Ajout de 'townHall' à la fin de 'street'.
+    street.push_back( townHall );
 
-    // Copy the elements from 'street' to 'street_TH'.
-    for( int i = 0; i < size; i++ )
+    // Affichage des éléments de 'street' en utilisant la méthode 'print' de
+    // 'Building'.
+    std::cout << "Street Contents:" << std::endl;
+    for( int i = 0; i < street.get_size(); i++ )
     {
-        street_TH[i] = street[i];
+        Building* building = street.at( i );
+        building->print( std::cout );
+        std::cout << std::endl;
     }
 
-    // Deallocate the memory used by the original 'street' array.
-    delete[] street;
-
-    // Add the 'townHall' pointer to the end of 'street_TH' and update 'size'
-    // accordingly.
-    street_TH[size] = townHall;
-    size += 1;
-
-    // Update the 'street' pointer to point to the modified 'street_TH' array.
-    street = street_TH;
-
-    // Deallocate memory for each 'Building' object in 'street'.
-    for( int id_b = 0; id_b < size; id_b++ )
+    // Libération de la mémoire utilisée par les objets 'Building' dans
+    // 'street'.
+    for( int id_b = 0; id_b < street.get_size(); id_b++ )
     {
-        delete street[id_b];
+        delete street.at( id_b );
     }
 
-    // Deallocate memory for the 'street' array itself.
-    delete[] street;
-
-    // Display a message and wait for the user to press enter before exiting the
-    // program.
+    // Affichage d'un message et attente de l'appui sur la touche "Entrée" avant
+    // de quitter le programme.
     std::cout << "Press enter to exit...";
     std::cin.get();
-    return 0; // Normal program termination.
+    return 0; // Terminaison normale du programme.
 }

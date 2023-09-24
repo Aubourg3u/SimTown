@@ -1,0 +1,126 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1,
+						2,
+						3
+					],
+					"jsonFile" : "directory-.-Debug-d0094a50bb2071803777.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.10"
+					},
+					"projectIndex" : 0,
+					"source" : "."
+				},
+				{
+					"build" : "src/class",
+					"jsonFile" : "directory-src.class-Debug-4dceaee8d43052e1b0a7.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.10"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "src/class",
+					"targetIndexes" : 
+					[
+						1
+					]
+				},
+				{
+					"build" : "mains",
+					"jsonFile" : "directory-mains-Debug-4e253d5af3a141ed8aef.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.10"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "mains",
+					"targetIndexes" : 
+					[
+						0
+					]
+				},
+				{
+					"build" : "tests",
+					"jsonFile" : "directory-tests-Debug-70e4927a02b591d5c1f8.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.10"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "tests",
+					"targetIndexes" : 
+					[
+						2
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3
+					],
+					"name" : "SimTown",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 2,
+					"id" : "SimTown::@577a8ba70abef5c48e72",
+					"jsonFile" : "target-SimTown-Debug-f59f3f6c4a4d962290cf.json",
+					"name" : "SimTown",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "class::@f7e45910cc8301501b3a",
+					"jsonFile" : "target-class-Debug-96d921aa0f4fecacdb20.json",
+					"name" : "class",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "test_building::@a44f0ac069e85531cdee",
+					"jsonFile" : "target-test_building-Debug-bff129e3b16bc1439766.json",
+					"name" : "test_building",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "C:/Users/natha/Desktop/cours/GIT/SimTown/SimTown/cmake-build-debug",
+		"source" : "C:/Users/natha/Desktop/cours/GIT/SimTown/SimTown"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 5
+	}
+}
