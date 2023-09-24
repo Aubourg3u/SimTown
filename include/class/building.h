@@ -30,7 +30,7 @@ public:
     // implemented by derived classes).
     virtual void print( std::ostream& out ) const;
 
-        // Méthode pour afficher le bâtiment sous forme de dessin.
+    // Méthode pour afficher le bâtiment sous forme de dessin.
     virtual void display( std::ostream& out ) const;
 
     int getNbStoreys() const;

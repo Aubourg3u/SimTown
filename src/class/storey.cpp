@@ -1,5 +1,5 @@
-#include <class/storey.h>
 #include <class/globals.h>
+#include <class/storey.h>
 
 int Storey::serial_number_ =
     1; // Initialize the static member variable 'serial_number_' to 1.
@@ -13,7 +13,6 @@ Storey::Storey() : source_( serial_number_ ), uid_( serial_number_ )
         std::cout << " Storey::Storey() : id " << uid_ << " at " << this
                   << std::endl;
     }
-
 }
 
 // Copy constructor for the 'Storey' class.
@@ -26,7 +25,6 @@ Storey::Storey( const Storey& rhs )
                   << " ), uid = " << uid_ << " at " << this << std::endl;
     }
     serial_number_++;
-
 }
 
 // Destructor for the 'Storey' class.

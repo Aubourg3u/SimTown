@@ -32,12 +32,11 @@ Building::~Building()
     {
         std::cout << "~Building " << id_ << " at " << this << std::endl;
     }
-    
 }
 
 // Assignment operator overload for the 'Building' class.
 Building& Building::operator=( const Building& rhs )
-{   
+{
     if( g_mode == "verbose" )
     {
         std::cout << "Building::Operator=( " << rhs.id_ << " ) at this " << this
@@ -106,7 +105,6 @@ int Building::getNbStoreys() const
     return nb_storeys_;
 }
 
-
 void Building::display( std::ostream& out ) const
 {
     out << "        ________________" << std::endl;
@@ -116,7 +114,7 @@ void Building::display( std::ostream& out ) const
     out << "    |                |  |" << std::endl;
 
     for( int i = 0; i < nb_storeys_; ++i )
-    {   
+    {
         out << "    |   _    _       |  |" << std::endl;
         out << "    |  |_|  |_|      |  |" << std::endl;
     }
@@ -135,7 +133,6 @@ House::House( int id, int nb_floors ) : Building( id, nb_floors )
     {
         std::cout << "Creating a House at " << this << std::endl;
     }
-
 }
 
 // Destructor for the 'House' class.
@@ -149,7 +146,7 @@ std::string House::getType() const
 
 void House::display( std::ostream& out ) const
 {
-    out << "         ______________"<< std::endl;
+    out << "         ______________" << std::endl;
     out << "        /             /\\ " << std::endl;
     out << "       /             /  \\" << std::endl;
     out << "      /_____________/    \\" << std::endl;
@@ -158,7 +155,7 @@ void House::display( std::ostream& out ) const
     out << "   /                  \\  /" << std::endl;
     out << "  /____________________\\/" << std::endl;
 
-        for( int i = 0; i < getNbStoreys() - 1; ++i )
+    for( int i = 0; i < getNbStoreys() - 1; ++i )
     {
         out << "    |   _    _       |  |" << std::endl;
         out << "    |  |_|  |_|      |  |" << std::endl;
@@ -170,10 +167,7 @@ void House::display( std::ostream& out ) const
 
     for( int i = 0; i < getNbStoreys(); ++i )
     {
-
     }
-
-
 }
 //==================================================================================================================================================================================================================================================
 
@@ -184,7 +178,6 @@ Tower::Tower( int id, int nb_floors ) : Building( id, nb_floors )
     {
         std::cout << "Creating a Tower at " << this << std::endl;
     }
-
 }
 
 // Destructor for the 'Tower' class.
@@ -204,7 +197,7 @@ void Tower::display( std::ostream& out ) const
     out << "     /______________ /  |" << std::endl;
     out << "    |                |  |" << std::endl;
 
-    for( int i = 0; i < getNbStoreys()-1; ++i )
+    for( int i = 0; i < getNbStoreys() - 1; ++i )
     {
         out << "    |   _    _       |  |" << std::endl;
         out << "    |  |_|  |_|      |  |" << std::endl;
@@ -224,7 +217,6 @@ TownHall::TownHall( int id ) : Building( id, 3 )
     {
         std::cout << "Creating a City Hall at " << this << std::endl;
     }
-
 }
 
 // Destructor for the 'TownHall' class.

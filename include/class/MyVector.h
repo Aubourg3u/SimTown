@@ -1,9 +1,9 @@
 #pragma once
 #ifndef MYVECTOR_H
-#define MYVECTOR_H
-#include <string.h>
+#    define MYVECTOR_H
+#    include <string.h>
 
-template <typename T>
+template < typename T >
 class MyVector
 {
     int size = 0;
@@ -17,7 +17,8 @@ public:
         buffer = new T[buffersize];
     }
 
-    MyVector(T* tab, int tab_size) {
+    MyVector( T* tab, int tab_size )
+    {
         buffer = new T[tab_size];
         for( int i = 0; i < tab_size; i++ )
         {
@@ -26,9 +27,7 @@ public:
         size = tab_size;
     }
 
-    ~MyVector()
-    {
-    }
+    ~MyVector() {}
 
     void push_back( T newElt )
     {
@@ -49,36 +48,37 @@ public:
         return buffer[--size];
     }
 
-    int get_size() {
+    int get_size()
+    {
         return size;
     }
 
-    T at(int i) {
+    T at( int i )
+    {
         return buffer[i];
     }
 
     void print( std::ostream& out )
-        {
-            out << "[ ";
-            for( int i = 0; i < size; i++ )
-            {
-                out << buffer[i] << ( i + 1 == size ? "" : ", " );
-            }
-            out << " ]" << std::endl;
-        }
-
-};
-    template<typename T>    
-
-    std::ostream& operator<<( std::ostream& out, MyVector< T > vect )
     {
         out << "[ ";
-        for( int i = 0; i < vect.get_size(); i++ )
+        for( int i = 0; i < size; i++ )
         {
+            out << buffer[i] << ( i + 1 == size ? "" : ", " );
+        }
+        out << " ]" << std::endl;
+    }
+};
+template < typename T >
+
+std::ostream& operator<<( std::ostream& out, MyVector< T > vect )
+{
+    out << "[ ";
+    for( int i = 0; i < vect.get_size(); i++ )
+    {
         out << vect.at( i ) << ( i + 1 == vect.get_size() ? "" : ", " );
-        };
-        out << " ]";
-        return out;
     };
+    out << " ]";
+    return out;
+};
 
 #endif
