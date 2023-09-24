@@ -1,12 +1,14 @@
 #pragma once // Pour éviter les inclusions multiples
 
+#include <class/storey.h>
 #include <iostream>
-#include<class/storey.h> 
 
-class Building {
+class Building
+{
 public:
-    // Constructor for the 'Building' class, taking 'id' and 'nb_floors' as parameters.
-    Building(int id, int nb_floors);
+    // Constructor for the 'Building' class, taking 'id' and 'nb_floors' as
+    // parameters.
+    Building( int id, int nb_floors );
 
     // Default constructor for the 'Building' class.
     Building();
@@ -15,16 +17,18 @@ public:
     virtual ~Building();
 
     // Assignment operator overload for the 'Building' class.
-    Building& operator=(const Building& rhs);
+    Building& operator=( const Building& rhs );
 
     // Copy constructor for the 'Building' class.
-    Building(const Building& rhs);
+    Building( const Building& rhs );
 
-    // Virtual function to get the type of the building (pure virtual, to be implemented by derived classes).
+    // Virtual function to get the type of the building (pure virtual, to be
+    // implemented by derived classes).
     virtual std::string getType() const = 0;
 
-    // Virtual function to print information about the building (to be implemented by derived classes).
-    virtual void print(std::ostream& out) const;
+    // Virtual function to print information about the building (to be
+    // implemented by derived classes).
+    virtual void print( std::ostream& out ) const;
 
 private:
     int id_;
@@ -34,10 +38,11 @@ private:
 
 //==================================================================================================================================================================================================================================================
 
-class House : public Building {
+class House : public Building
+{
 public:
     // Constructor for the 'House' class, inheriting from 'Building'.
-    House(int id, int nb_floors);
+    House( int id, int nb_floors );
 
     // Destructor for the 'House' class.
     virtual ~House();
@@ -48,10 +53,11 @@ public:
 
 //==================================================================================================================================================================================================================================================
 
-class Tower : public Building {
+class Tower : public Building
+{
 public:
     // Constructor for the 'Tower' class, inheriting from 'Building'.
-    Tower(int id, int nb_floors);
+    Tower( int id, int nb_floors );
 
     // Destructor for the 'Tower' class.
     virtual ~Tower();
@@ -62,10 +68,11 @@ public:
 
 //==================================================================================================================================================================================================================================================
 
-class TownHall : public Building {
+class TownHall : public Building
+{
 public:
     // Constructor for the 'TownHall' class, inheriting from 'Building'.
-    TownHall(int id);
+    TownHall( int id );
 
     // Destructor for the 'TownHall' class.
     virtual ~TownHall();
