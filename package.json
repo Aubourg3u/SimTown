@@ -1,17 +1,17 @@
 {
-  "name": "mon-projet",
+  "name": "SimTown",
   "version": "1.0.0",
-  "description": "Description de mon projet",
-  "main": "index.js",
+  "description": "A project in c++ course to code a SimCity like game",
+  "main": "SimTown.cpp",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "semantic-release": "semantic-release"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/votre-utilisateur/mon-projet.git"
+    "url": "https://github.com/Aubourg3u/SimTown"
   },
-  "author": "Votre Nom",
+  "author": "Aubourg Nathan",
   "license": "MIT",
   "devDependencies": {
     "@semantic-release/changelog": "^7.0.0",
