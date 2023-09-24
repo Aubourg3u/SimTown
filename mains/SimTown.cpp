@@ -7,12 +7,7 @@
 
 int main( int argc, char** argv )
 {
-    g_mode = "mute";
-
-    int tab[4] = { 0, 1, 2, 3 };
-
-    MyVector< int > vect( tab, 4 );
-    std::cout << vect << std::endl;
+    g_mode = "mute"; //Mode to hide all noisy cout in building and storey
 
     int size = 0;
     std::cout << "Welcome to SimTown, please enter the street size."

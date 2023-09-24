@@ -57,14 +57,15 @@ public:
         return buffer[i];
     }
 
-    void print(std::ostream& out) {
-        out << "[ ";
-        for( int i = 0; i < size; i++ )
+    void print( std::ostream& out )
         {
-            out << buffer[i] << ( i + 1 == vect.get_size() ? "" : ", " );        
+            out << "[ ";
+            for( int i = 0; i < size; i++ )
+            {
+                out << buffer[i] << ( i + 1 == size ? "" : ", " );
+            }
+            out << " ]" << std::endl;
         }
-        out << " ]" << std::endl; 
-    }
 
 };
     template<typename T>    
