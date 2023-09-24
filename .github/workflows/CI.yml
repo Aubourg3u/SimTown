@@ -15,7 +15,7 @@ jobs:
   format:
     uses: Geode-solutions/actions/.github/workflows/format.yml@master
     secrets:
-      TOKEN: ${{ secrets.TOKEN_CI }}
+      TOKEN: ${{ secrets.TOKEN_CI_FINE }}
 
   build:
     # The CMake configure and build commands are platform agnostic and should work equally well on Windows or Mac.
