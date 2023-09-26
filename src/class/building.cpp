@@ -100,6 +100,15 @@ void Building::print( std::ostream& out ) const
     }
 }
 
+Storey* Building::create_and_add_storey() {
+	Storey* new_storey = new Storey[nb_storeys_ + 1];
+	clone_storeys(new_storey);
+	delete[] storeys_;
+	nb_storeys_++;
+	return &storeys_[nb_storeys_-1];
+
+}
+
 int Building::getNbStoreys() const
 {
     return nb_storeys_;

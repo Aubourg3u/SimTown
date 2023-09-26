@@ -33,12 +33,26 @@ public:
     // Méthode pour afficher le bâtiment sous forme de dessin.
     virtual void display( std::ostream& out ) const;
 
+    virtual Storey* create_and_add_storey();
+
     int getNbStoreys() const;
+	
 
 private:
     int id_;
     Storey* storeys_;
     int nb_storeys_;
+
+    void Building::clone_storeys( Storey* lhs )
+    {
+        for( int i = 0; i < nb_storeys_; ++i )
+        {
+            lhs[i] = storeys_[i];
+        }
+    }
+
+
+
 };
 
 //==================================================================================================================================================================================================================================================

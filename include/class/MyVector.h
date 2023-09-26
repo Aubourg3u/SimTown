@@ -1,7 +1,8 @@
 #pragma once
 #ifndef MYVECTOR_H
-#    define MYVECTOR_H
-#    include <string.h>
+#define MYVECTOR_H
+#include <string.h>
+#include <iostream>>
 
 template < typename T >
 class MyVector
