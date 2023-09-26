@@ -4,15 +4,16 @@
 #    define MYVECTOR_H
 #    include <iostream>>
 #    include <string.h>
-    =======
+    == == == =
 #    define MYVECTOR_H
 #    include <string.h>
 
 #    include <iostream>
-    >>>>>>> 872c350 (feat(residents): added residents to floreys)
+    >>>>>>> 872c350( feat( residents )
+                     : added residents to floreys )
 
-    template < typename T >
-    class MyVector
+        template < typename T >
+        class MyVector
 {
     int size = 0;
     int buffersize = 8;
