@@ -4,15 +4,15 @@
 #    define MYVECTOR_H
 #    include <iostream>>
 #    include <string.h>
-=======
-#define MYVECTOR_H
-#include<string.h>
+    =======
+#    define MYVECTOR_H
+#    include <string.h>
 
-#include<iostream>
->>>>>>> 872c350 (feat(residents): added residents to floreys)
+#    include <iostream>
+    >>>>>>> 872c350 (feat(residents): added residents to floreys)
 
-template < typename T >
-class MyVector
+    template < typename T >
+    class MyVector
 {
     int size = 0;
     int buffersize = 8;
@@ -37,7 +37,8 @@ public:
 
     ~MyVector() {}
 
-    void grow() {
+    void grow()
+    {
         buffersize *= 2;
         T* newbuffer = new T[buffersize];
         memcpy( newbuffer, buffer, size );
@@ -80,14 +81,15 @@ public:
         out << " ]" << std::endl;
     }
 
-    T* operator=( const T* rhs ) {
+    T* operator=( const T* rhs )
+    {
         T* temp_buffer = new T[rhs.buffersize];
         for( int i = 0; i < rhs.size; i++ )
         {
             temp_buffer[i] = rhs.buffer[i];
         }
         delete buffer;
-        buffer = temp_buffer;        
+        buffer = temp_buffer;
     }
 };
 template < typename T >
