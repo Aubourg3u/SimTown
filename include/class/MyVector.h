@@ -1,8 +1,15 @@
 #pragma once
 #ifndef MYVECTOR_H
+<<<<<<< HEAD
 #    define MYVECTOR_H
 #    include <iostream>>
 #    include <string.h>
+=======
+#define MYVECTOR_H
+#include<string.h>
+
+#include<iostream>
+>>>>>>> 872c350 (feat(residents): added residents to floreys)
 
 template < typename T >
 class MyVector
@@ -30,15 +37,19 @@ public:
 
     ~MyVector() {}
 
+    void grow() {
+        buffersize *= 2;
+        T* newbuffer = new T[buffersize];
+        memcpy( newbuffer, buffer, size );
+        delete buffer;
+        buffer = newbuffer;
+    }
+
     void push_back( T newElt )
     {
         if( size + 1 >= buffersize )
         {
-            buffersize *= 2;
-            T* newbuffer = new T[buffersize];
-            memcpy( newbuffer, buffer, size );
-            delete buffer;
-            buffer = newbuffer;
+            grow();
         }
         buffer[size] = newElt;
         size++;
@@ -67,6 +78,16 @@ public:
             out << buffer[i] << ( i + 1 == size ? "" : ", " );
         }
         out << " ]" << std::endl;
+    }
+
+    T* operator=( const T* rhs ) {
+        T* temp_buffer = new T[rhs.buffersize];
+        for( int i = 0; i < rhs.size; i++ )
+        {
+            temp_buffer[i] = rhs.buffer[i];
+        }
+        delete buffer;
+        buffer = temp_buffer;        
     }
 };
 template < typename T >
