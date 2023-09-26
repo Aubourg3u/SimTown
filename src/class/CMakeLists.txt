@@ -8,6 +8,8 @@ target_sources(${target_name}
  PRIVATE "${PROJECT_SOURCE_DIR}/include/class/storey.h"
  PRIVATE "${PROJECT_SOURCE_DIR}/src/class/storey.cpp"
  PRIVATE "${PROJECT_SOURCE_DIR}/src/class/globals.cpp"
+ PRIVATE "${PROJECT_SOURCE_DIR}/src/class/resident.cpp"
+ PRIVATE "${PROJECT_SOURCE_DIR}/include/class/resident.h"
 )
 target_include_directories(${target_name}
  PUBLIC
